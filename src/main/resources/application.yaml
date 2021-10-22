@@ -1,0 +1,21 @@
+batsman:
+  - type: Normal
+    capableScore: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+  - type: Defensive
+    capableScore: 
+      - 0
+      - 4
+      - 6
+  - type: Hitter
+    capableScore: 
+      - 0
+      - 1
+      - 2
+      - 3
