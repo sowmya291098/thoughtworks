@@ -4,6 +4,7 @@ import com.example.demo.constants.Constants;
 import com.example.demo.model.CricketPlayer;
 
 public class Cricket {
+	
 	public Boolean didBatsmanWin(int noOfOvers, int target, CricketPlayer batsman, CricketPlayer bowler) {
 		int aggScore = 0;
 		for (int i = 0; i < Constants.over * noOfOvers; i++) {
@@ -20,4 +21,5 @@ public class Cricket {
 		}
 		return false;
 	}
+	
 }
