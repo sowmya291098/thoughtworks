@@ -4,12 +4,14 @@ import java.util.Random;
 
 import com.example.demo.constants.Constants;
 
-public class CricketPlayer {
+public abstract class CricketPlayer {
+	int id;
 	int score;
 	public static Random scoregen = new Random();
 	final static int over = Constants.over;
 
-	public CricketPlayer() {
+	public CricketPlayer(int id) {
+		this.id=id;
 	}
 
 	public int getScoresForGivenOver(int numOfOvers) {
@@ -36,9 +38,10 @@ public class CricketPlayer {
 		this.score = score;
 	}
 
+	protected abstract int getNextNum();
 	//Override this for testing
-	public int getNextNum() {
-		return scoregen.nextInt(over);
-	}
+//	public int getNextNum() {
+//		return scoregen.nextInt(over);
+//	}
 }
 

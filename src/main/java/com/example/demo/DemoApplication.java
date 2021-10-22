@@ -4,6 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.example.demo.model.CricketPlayer;
+import com.example.demo.model.CricketTeam;
+import com.example.demo.model.PlayerType;
 import com.example.demo.model.Batsman;
 import com.example.demo.service.Cricket;
 
@@ -28,9 +30,9 @@ public class DemoApplication {
 		/*
 		 * Problem 2
 		 */
-		Batsman batsman1 = new Batsman("Normal");
-		CricketPlayer bowler = new CricketPlayer();
-		int target = 20;
+		CricketPlayer batsman1 = CricketTeam.getBatsman(PlayerType.Defensive);
+		CricketPlayer bowler = CricketTeam.getBowler();
+		int target = 4;
 		int noOfOvers = 2;
 		Cricket cricket = new Cricket();
 		if (cricket.didBatsmanWin(noOfOvers, target, batsman1, bowler))
