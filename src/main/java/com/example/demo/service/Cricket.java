@@ -14,8 +14,8 @@ public class Cricket {
 			int batsmanScore = batsman.getScoresForGivenBalls(1);
 			int bowlerScore = bowler.getScoresForGivenBalls(1);
 			System.out.println("Batsman score " + batsmanScore + " bowlerScore " + bowlerScore);
-			if ((batsmanScore == bowlerScore && bowler.getBowlerType()==BowlerType.Normal)
-					|| (batsman.getBatsmanType()==BatsmanType.TailEnder && batsmanScore%2==bowlerScore%2)) {
+			if (bowler.getBowlerType()==BowlerType.Normal && (batsmanScore == bowlerScore
+					|| (batsman.getBatsmanType()==BatsmanType.TailEnder && batsmanScore%2==bowlerScore%2))) {
 				return false;
 			}
 			aggScore += batsmanScore;
