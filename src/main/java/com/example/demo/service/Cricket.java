@@ -1,17 +1,19 @@
 package com.example.demo.service;
 
 import com.example.demo.constants.Constants;
-import com.example.demo.model.CricketPlayer;
+import com.example.demo.model.Batsman;
+import com.example.demo.model.Bowler;
+import com.example.demo.model.BowlerType;
 
 public class Cricket {
 	
-	public Boolean didBatsmanWin(int noOfOvers, int target, CricketPlayer batsman, CricketPlayer bowler) {
+	public Boolean didBatsmanWin(int noOfOvers, int target, Batsman batsman, Bowler bowler) {
 		int aggScore = 0;
 		for (int i = 0; i < Constants.over * noOfOvers; i++) {
 			int batsmanScore = batsman.getScoresForGivenBalls(1);
 			int bowlerScore = bowler.getScoresForGivenBalls(1);
 			System.out.println("Batsman score " + batsmanScore + " bowlerScore " + bowlerScore);
-			if (batsmanScore == bowlerScore) {
+			if (batsmanScore == bowlerScore && bowler.getBowlerType()==BowlerType.Normal) {
 				return false;
 			}
 			aggScore += batsmanScore;

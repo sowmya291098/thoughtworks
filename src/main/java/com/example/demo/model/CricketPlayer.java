@@ -38,10 +38,15 @@ public abstract class CricketPlayer {
 		this.score = score;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	protected abstract int getNextNum();
-	//Override this for testing
-//	public int getNextNum() {
-//		return scoregen.nextInt(over);
-//	}
+
 }
 

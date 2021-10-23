@@ -4,13 +4,20 @@ import com.example.demo.constants.Constants;
 
 public class Bowler extends CricketPlayer{
 
-	public Bowler(int id) {
+	BowlerType bowlerType;
+	
+	public Bowler(int id,BowlerType bowlerType) {
 		super(id);
+		this.bowlerType=bowlerType;
 	}
 
 	@Override
 	protected int getNextNum() {
 		return scoregen.nextInt(Constants.over);
+	}
+	
+	public BowlerType getBowlerType() {
+		return bowlerType;
 	}
 
 }
