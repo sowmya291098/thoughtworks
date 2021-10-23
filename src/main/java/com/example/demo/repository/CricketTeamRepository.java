@@ -5,7 +5,7 @@ import com.example.demo.model.BatsmanType;
 import com.example.demo.model.Bowler;
 import com.example.demo.model.BowlerType;
 
-public interface CricketTeamRepository {
-	public Bowler getBowler(BowlerType bowlerType);
-	public Batsman getBatsman(BatsmanType type);
+public abstract class CricketTeamRepository {
+	public abstract Bowler getBowler(BowlerType bowlerType);
+	public abstract Batsman getBatsman(BatsmanType type);
 }

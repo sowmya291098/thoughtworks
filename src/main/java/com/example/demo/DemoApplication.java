@@ -16,9 +16,8 @@ import com.example.demo.service.CricketTeam;
 public class DemoApplication {
 
 	public static void main(String[] args) {
-
-		Batsman batsman = new CricketTeam().getBatsman(BatsmanType.Defensive);
-		Bowler bowler = new CricketTeam().getBowler(BowlerType.Normal);
+		Batsman batsman =new CricketTeam().getBatsman(BatsmanType.Defensive);
+		Bowler bowler = new CricketTeam().getBowler(BowlerType.PartTime);
 		int target = 4;
 		int noOfOvers = 2;
 		Cricket cricket = new Cricket();

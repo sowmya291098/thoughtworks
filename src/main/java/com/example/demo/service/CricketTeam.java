@@ -6,15 +6,8 @@ import com.example.demo.model.Bowler;
 import com.example.demo.model.BowlerType;
 import com.example.demo.repository.CricketTeamRepository;
 
-public class CricketTeam implements CricketTeamRepository{
+public class CricketTeam extends CricketTeamRepository{
 	static int id;
-	
-	CricketTeam cricketTeam;
-	
-	public CricketTeam() {
-		if(cricketTeam==null)
-			cricketTeam=new CricketTeam();
-	}
 
 	public Bowler getBowler(BowlerType bowlerType) {
 		System.out.println("Bowler arrived: "+id);
@@ -25,11 +18,11 @@ public class CricketTeam implements CricketTeamRepository{
 		System.out.println("Batsman arrived: "+id);
 		switch (type) {
 		case Hitter:
-			return new Batsman(new int[] { 0, 4, 6 }, id++);
+			return new Batsman(new int[] { 0, 4, 6 }, id++,type);
 		case Defensive:
-			return new Batsman(new int[] { 0, 1, 2, 3 }, id++);
+			return new Batsman(new int[] { 0, 1, 2, 3 }, id++,type);
 		default:
-			return new Batsman(new int[] { 0, 1, 2, 3, 4, 5 }, id++);
+			return new Batsman(new int[] { 0, 1, 2, 3, 4, 5 }, id++,type);
 		}
 	}
 }
