@@ -8,7 +8,7 @@ import com.example.demo.model.BatsmanType;
 import com.example.demo.model.Bowler;
 import com.example.demo.model.BowlerType;
 import com.example.demo.service.Cricket;
-import com.example.demo.setup.CricketTeam;
+import com.example.demo.setup.CricketTeamFactory;
 
 //@SpringBootTest
 class DemoApplicationTests {
@@ -21,9 +21,9 @@ class DemoApplicationTests {
 	
 	@Test
 	void testTailEnderBatsman() {
-		Batsman batsman = CricketTeam.getBatsman(BatsmanType.TailEnder);
+		Batsman batsman = CricketTeamFactory.getBatsman(BatsmanType.TailEnder);
 		batsman.setScore(12);
-		Bowler bowler = CricketTeam.getBowler(BowlerType.Normal);
+		Bowler bowler = CricketTeamFactory.getBowler(BowlerType.Normal);
 		bowler.setScore(10);
 		System.out.println("Test service");
 		assert(!cricket.didBatsmanWin(0, 12, batsman, bowler));		
@@ -32,9 +32,9 @@ class DemoApplicationTests {
 	@Test
 	void testPartTimeBowler() {
 		//PartTime bowler doesnt take wickets
-		Batsman batsman = CricketTeam.getBatsman(BatsmanType.Normal);
+		Batsman batsman = CricketTeamFactory.getBatsman(BatsmanType.Normal);
 		batsman.setScore(12);
-		Bowler bowler = CricketTeam.getBowler(BowlerType.PartTime);
+		Bowler bowler = CricketTeamFactory.getBowler(BowlerType.PartTime);
 		bowler.setScore(12);
 		System.out.println("Test service");
 		assert(!cricket.didBatsmanWin(0, 12, batsman, bowler));		

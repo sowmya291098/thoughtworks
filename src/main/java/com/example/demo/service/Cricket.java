@@ -5,6 +5,7 @@ import com.example.demo.model.Batsman;
 import com.example.demo.model.BatsmanType;
 import com.example.demo.model.Bowler;
 import com.example.demo.model.BowlerType;
+import com.example.demo.setup.CricketTeamFactory;
 
 public class Cricket {
 	
@@ -14,6 +15,7 @@ public class Cricket {
 			int batsmanScore = batsman.getScoresForGivenBalls(1);
 			int bowlerScore = bowler.getScoresForGivenBalls(1);
 			System.out.println("Batsman score " + batsmanScore + " bowlerScore " + bowlerScore);
+			//PartTime Bowler doesnt take wickets
 			if (bowler.getBowlerType()==BowlerType.Normal && (batsmanScore == bowlerScore
 					|| (batsman.getBatsmanType()==BatsmanType.TailEnder && batsmanScore%2==bowlerScore%2))) {
 				return false;
@@ -24,6 +26,11 @@ public class Cricket {
 			}
 		}
 		return false;
+	}
+	
+	public Boolean didBattingTeamWin(int noOfOvers,int target,CricketTeamFactory cricketTeam) {
+		return false;
+		
 	}
 	
 }
