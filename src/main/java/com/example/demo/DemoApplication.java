@@ -22,6 +22,7 @@ public class DemoApplication {
 		else
 			System.out.println("Batsman has lost");
 		
+		
 		//TODO: 2 Batsman in a team
 		cricket.didBattingTeamWin(noOfOvers, target, cricketTeam.getBattingTeam());
 		
